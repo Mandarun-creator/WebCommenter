@@ -44,13 +44,35 @@ Cette étape installera la bibliothèque `requests` et toutes les autres dépend
 
 ## Utilisation du script
 
-Une fois le projet cloné et les dépendances installées, vous pouvez exécuter le script depuis **n'importe quel répertoire** de votre système **Kali Linux**. Il vous suffit d'utiliser la commande suivante :
+Une fois le projet cloné et les dépendances installées, vous pouvez rendre le script exécutable et l'utiliser directement depuis n'importe quel répertoire de votre système **Kali Linux**.
 
-```bash
-webcommenter [options] [urls]
-```
+### Étapes pour rendre le script exécutable
 
-### Exemples d'utilisation
+1. **Ajouter la ligne shebang** dans le fichier `webcommenter.py` :
+   
+   Assurez-vous que la première ligne du fichier `webcommenter.py` est :
+
+   ```bash
+   #!/usr/bin/env python3
+   ```
+
+2. **Rendre le fichier exécutable** :
+
+   Utilisez la commande suivante pour rendre le script exécutable :
+
+   ```bash
+   chmod +x webcommenter.py
+   ```
+
+3. **Créer un lien symbolique** (facultatif) :
+
+   Si vous souhaitez exécuter `webcommenter` depuis n'importe quel répertoire en tant que commande, créez un lien symbolique vers `/usr/local/bin` :
+
+   ```bash
+   sudo ln -s ~/Documents/WebCommenter/webcommenter.py /usr/local/bin/webcommenter
+   ```
+
+### Exemple d'exécution
 
 1. **Afficher tout le code source d'une page web** depuis n'importe où dans le système :
 
