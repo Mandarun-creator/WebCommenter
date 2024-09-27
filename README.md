@@ -34,47 +34,46 @@ cd WebCommenter
 
 ### 2. Installer les dépendances
 
-Le projet utilise la bibliothèque **requests**, qui est une dépendance externe. Vous pouvez l'installer avec `pip` en exécutant la commande suivante :
+Les dépendances nécessaires pour ce projet sont listées dans le fichier `requirements.txt`. Pour installer ces dépendances, exécutez la commande suivante :
 
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
-Cette étape est essentielle pour que le script fonctionne correctement.
+Cette étape installera la bibliothèque `requests` et toutes les autres dépendances nécessaires.
 
 ## Utilisation du script
 
-Une fois le projet cloné et les dépendances installées, vous pouvez exécuter le script depuis n'importe quel répertoire de votre système Kali Linux. Il vous suffit de naviguer vers le répertoire où vous souhaitez l'utiliser ou de le lancer directement à partir du répertoire cloné.
+Une fois le projet cloné et les dépendances installées, vous pouvez exécuter le script depuis **n'importe quel répertoire** de votre système **Kali Linux**. Il vous suffit d'utiliser la commande suivante :
 
-### Exemple d'exécution
+```bash
+webcommenter [options] [urls]
+```
 
-Vous pouvez exécuter le script depuis **n'importe quel répertoire** en indiquant simplement le chemin du script, ou en vous rendant dans le répertoire `WebCommenter`. Voici quelques exemples d'exécution :
+### Exemples d'utilisation
 
-1. **Afficher tout le code source d'une page web** depuis le répertoire `Documents` :
+1. **Afficher tout le code source d'une page web** depuis n'importe où dans le système :
 
    ```bash
-   cd ~/Documents
-   python3 ~/WebCommenter/webcommenter.py -c https://example.com
+   webcommenter -c https://example.com
    ```
 
-2. **Afficher uniquement les commentaires HTML d'une page web** depuis le répertoire `Téléchargements` :
+2. **Afficher uniquement les commentaires HTML d'une page web** :
 
    ```bash
-   cd ~/Téléchargements
-   python3 ~/WebCommenter/webcommenter.py -C https://example.com
+   webcommenter -C https://example.com
    ```
 
-3. **Rechercher le mot "TODO" dans les commentaires et afficher le contexte du code** à partir de n'importe quel emplacement :
+3. **Rechercher le mot "TODO" dans les commentaires et afficher le contexte du code** :
 
    ```bash
-   python3 ~/WebCommenter/webcommenter.py -S "TODO" https://example.com
+   webcommenter -S "TODO" https://example.com
    ```
 
-4. **Enregistrer les résultats des commentaires dans un fichier `resultat.txt`** depuis le répertoire `Desktop` (Bureau) :
+4. **Enregistrer les résultats des commentaires dans un fichier `resultat.txt`** :
 
    ```bash
-   cd ~/Desktop
-   python3 ~/WebCommenter/webcommenter.py -C -o resultat.txt https://example.com
+   webcommenter -C -o resultat.txt https://example.com
    ```
 
 ## Utilisation en tant que Module Python
@@ -102,7 +101,7 @@ if filtered_comments:
 Vous pouvez exécuter les tests unitaires pour valider le bon fonctionnement du script en utilisant l'option `--test`.
 
 ```bash
-python3 ~/WebCommenter/webcommenter.py --test
+webcommenter --test
 ```
 
 Cela exécutera les tests unitaires qui valideront plusieurs fonctionnalités, comme l'extraction des commentaires et la recherche dans ceux-ci.
